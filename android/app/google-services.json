@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "888123660389",
+    "project_id": "reklam-90e49",
+    "storage_bucket": "reklam-90e49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888123660389:android:999a051414b2db42524e8c",
+        "android_client_info": {
+          "package_name": "com.azbakkazan.reklam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888123660389-dqt84ui8iectsobfv9kugkkpkrertam2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.azbakkazan.reklam",
+            "certificate_hash": "47586698e6a124243669f90e04b8368d7b054229"
+          }
+        },
+        {
+          "client_id": "888123660389-tpmpd885utrp0a16tscpr3bu2puf41de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh_acm1WYK9OBvu-tonpBvhRHX76pupAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888123660389-tpmpd885utrp0a16tscpr3bu2puf41de.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
