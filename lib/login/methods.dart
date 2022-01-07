@@ -1,29 +1,30 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 
 Future<User?> createAccount(String name, String email, String password) async {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  //FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   try {
-   // UserCredential userCrendetial = await _auth.createUserWithEmailAndPassword(
-     //   email: email, password: password);
-  User? user = (await _auth.createUserWithEmailAndPassword(
-    email: email, password: password))
-    .user;
-    //print("Account created Succesfull");
+    UserCredential userCrendetial = await _auth.createUserWithEmailAndPassword(
+        email: email, password: password);
+ 
+    print("Account created Succesfull");
     
-    //userCrendetial.user!.updateDisplayName(name);
-  if(user!= null){
-    print('succesfull');
-    return user;
-  } else {
-    print('fail');
-    return user;
-  }
-  } catch(e){
+   userCrendetial.user!.updateDisplayName(name);
+
+    await _firestore.collection('users').doc(_auth.currentUser!.uid).set({
+      "name": name,
+      "email": email,
+      "status": "Unavalible",
+      "uid": _auth.currentUser!.uid,
+    });
+
+    return userCrendetial.user;
+  } catch (e) {
     print(e);
     return null;
   }
@@ -31,23 +32,23 @@ Future<User?> createAccount(String name, String email, String password) async {
 
 Future<User?> logIn(String email, String password) async {
   FirebaseAuth _auth = FirebaseAuth.instance;
- // FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   try {
-    User? user = (await _auth.createUserWithEmailAndPassword(
-    email: email, password: password))
-    .user;
-    //print("Account created Succesfull");
+    UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: email, password: password);
+
+   
+    print("Account created Succesfull");
     
-    //userCrendetial.user!.updateDisplayName(name);
-  if(user!= null){
-    print('login succesfull');
-    return user;
-  } else {
-    print('login fail');
-    return user;
-  }
-  } catch(e){
+  _firestore
+        .collection('users')
+        .doc(_auth.currentUser!.uid)
+        .get()
+        .then((value) => userCredential.user!.updateDisplayName(value['name']));
+
+    return userCredential.user;
+  } catch (e) {
     print(e);
     return null;
   }

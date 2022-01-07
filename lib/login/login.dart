@@ -12,6 +12,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
   bool isLoading = false;
+  String hata1='';
+  String hata2='';
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +98,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                  )
+                  ),
+                  Text('$hata1'),
+                  Text('$hata2'),
+
                 ],
               ),
             ),
@@ -120,14 +125,14 @@ class _LoginScreenState extends State<LoginScreen> {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => HomeScreen()));
             } else {
-              print("Login Failed");
+              hata1="Login Failed: Kullanıcı Adı Veya Şifre Hatalı";
               setState(() {
                 isLoading = false;
               });
             }
           });
         } else {
-          print("Please fill form correctly");
+          hata2="Lütfen formu doğru doldurun";
         }
       },
       child: Container(

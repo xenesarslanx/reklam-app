@@ -16,7 +16,7 @@ class OnboardingItems{
     const fi = <OnboardingItem>[
       OnboardingItem(
         title: 'Reklam İzle',
-        subtitle:"Reklamları İzleyerek Ve Cihazınızı Daha Az kullanarak Puan Toplayabilirsiniz \n --------------------------------------------------------------------->",
+        subtitle:"Reklamları İzleyerek Ve Cihazınızı Daha Az Kullanarak Puan Toplayabilirsiniz \n --------------------------------------------------------------------->",
         image:"lib/assets/Googlearka.png",
         color:Colors.green
       ),

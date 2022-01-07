@@ -3,26 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:reklam/app_usage/grafik_data.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:reklam/pages/home_screen.dart';
-
 class Grafik extends StatefulWidget {
-  final List<AppUsageInfo> information;
+  late final List<AppUsageInfo> information;
+  GrafikState gr = GrafikState();
 
   Grafik({required this.information});
 
   @override
   GrafikState createState() => GrafikState();
 }
+  
 
 class GrafikState extends State<Grafik> {
+  late final List<AppUsageInfo> information;
 
   List<AppUsageInfo> infos = [];
   late List<AppUsageInfo> infoList;
 
   var largest = [0];
+  var toplam = [0];
   var largests = ['0'];
   var large = [];
 
+
   getUsageStats() async {
+    
+    //bildirim.dene=information.length;
     try {
       DateTime endDate = new DateTime.now();
       DateTime startDate = endDate.subtract(Duration(days: 1));
@@ -54,10 +60,18 @@ class GrafikState extends State<Grafik> {
       }
 
       print(bildirim.enCok =
-          'son 24 saatte en çok vakit harcanan uygulama: ${largests[0].substring(4)}-> kullanım süresi: ${largest[0]} dk');
+          'son 24 saatte en çok vakit harcanan uygulama:\n ${largests[0].substring(4)}-> kullanım süresi: ${largest[0]} dk');
+//Toplam Cihaz Kullanım Süresi Bulma
+           for (n = 0; n < infoList.length; n++) {
+       toplam[0] = toplam[0]+(infoList[n].usage.inMinutes.toInt());           
+           }
+
+        print(bildirim.toplamsure =  toplam[0] );
+        toplam[0] = 0;
     } on AppUsageException catch (exception) {
       print(exception);
     }
+   
   }
 
   @override
@@ -90,7 +104,7 @@ class GrafikState extends State<Grafik> {
           Wrap(
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(5.0),
                 child: ElevatedButton(
                      style: ElevatedButton.styleFrom(
                  primary: Colors.blue[400],
@@ -104,16 +118,26 @@ class GrafikState extends State<Grafik> {
                     }),
               ),
               Container(
-                width:255, height: 55,
-                color: Colors.blueAccent,
-                child: Text('${bildirim.enCok}'),
+                width:250, height: 80,
+                color: Colors.green,
+                child: Text(bildirim.enCok),                
+              ),
+             
+              Padding(
+                padding: const EdgeInsets.only(left: 73),
+                child: Container(
+                  width:250, height: 30,
+                  color: Colors.red[300], 
+                  child: Text('Ortalama cihaz kullanımı: ${bildirim.toplamsure} dk'),                
+        
+                ),
               )
             ],
           ),
           Expanded(
             child: charts.BarChart(
               getSeriesData(widget.information),
-
+        
               animate: true,
               vertical: false, //grafik dikey veya yatay
               domainAxis: const charts.OrdinalAxisSpec(
@@ -129,10 +153,13 @@ class GrafikState extends State<Grafik> {
 
 class Bildirim {
   List<int>largest;
+  List<int>toplam;
   List<dynamic> uyari;
   String enCok;
+  int toplamsure;
+  int dene;
   String de;
-  Bildirim({required this.enCok, required this.uyari, required this.de, required this.largest});
+  Bildirim({required this.enCok, required this.uyari, required this.de, required this.dene, required this.largest, required this.toplamsure, required this.toplam});
 }
 
-Bildirim bildirim = Bildirim(de: '', enCok: '', uyari: [], largest: []);
+Bildirim bildirim = Bildirim(de: '', enCok: '', uyari: [], largest: [], toplamsure: 0, dene: 0, toplam: []);

@@ -12,7 +12,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MobileAds.initialize();
   await Firebase.initializeApp();
-  //MobileAds.setTestDeviceIds(['9345804C1E5765DHG1DFE29CA0758842']);
+  MobileAds.setTestDeviceIds(['9345804C1E5765DHG1DFE29CA0758842']);//
   final AppOpenAd appOpenAd = AppOpenAd();
   if (!appOpenAd.isAvailable) {
     await appOpenAd.load(unitId: MobileAds.appOpenAdTestUnitId);//'ca-app-pub-5417429060364094/5523569708'

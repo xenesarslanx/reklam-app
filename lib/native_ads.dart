@@ -32,7 +32,9 @@ class _NativeAdsState extends State<NativeAds>
     return controller.isLoaded
         ? NativeAd(
             height: 330,
-            unitId: 'ca-app-pub-5417429060364094/8778175622',
+            unitId: MobileAds.nativeAdTestUnitId,
+            //real id:'ca-app-pub-5417429060364094/8778175622',
+            //test id:'ca-app-pub-3940256099942544/2247696110'
             // unitId: MobileAds.nativeAdTestUnitId,
  
             loading: Text('loading'),

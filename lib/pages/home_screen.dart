@@ -110,7 +110,7 @@ class HomeScreenState extends State<HomeScreen> {
      debugShowCheckedModeBanner: false,
      home: SafeArea(
        child: Scaffold(
-         backgroundColor: Colors.green[300],
+    
        appBar: AppBar(
          title: Text('Ana Sayfa'),
        centerTitle: true,
@@ -119,123 +119,136 @@ class HomeScreenState extends State<HomeScreen> {
        ),
    
        body: Column(
-         
-         children:[
-           SizedBox(width: 20, height: 20,),
-             Padding(
-               padding: const EdgeInsets.all(10.0),
-       child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-               primary: Colors.deepOrange[400],
-               fixedSize: const Size(240, 60),            
-           ),
-                 onPressed: () {
-                    Navigator.push(
-                       context,
-                        MaterialPageRoute(
-                          builder: (context) => Kamuspotu(),
-                        )
-                        );
-                      setState(() {
-                        var mypuan = context.read<PuanData>();
-                           mypuan.kamuspotupuan(); 
-                        _interstitialAd.show();
-                      });
-       
-   
-                  }, 
-                 child: const Text('Kamu Spotu')),
-             ),
-       SizedBox(width: 20, height: 20,),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                 primary: Colors.redAccent[500],
-                 fixedSize: const Size(240, 60),            
-           ),
-                  onPressed:  () {
-                    Navigator.push(
-                       context,
-                        MaterialPageRoute(
-                          builder: (context) => odullu_reklam(),
-                        )
-                        );
-                      setState(() {
-                      
-                        _interstitialAd.show();
-                      });
-       
-   
-                  }, 
-                 child: const Text('Ödüllü Reklamlar')),
-              ),
-               
-                    SizedBox(width: 20, height: 20,),
-               Padding(
-                 padding: const EdgeInsets.all(10.0),
-                 child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                   primary: Colors.yellow[500],
-                   fixedSize: const Size(240, 60),            
-           ),
-                    child: Text('Cihaz Kullanım İstatistiği'),
-                   onPressed: () {
-                    Navigator.push(
-                       context,
-                        MaterialPageRoute(
-                          builder: (context) => Grafik(information: infos)
-                        )
-                        );
-                      setState(() {
-                        refresh();
-                        _interstitialAd.show();
-                      });
-                  },             
-                    ),
-               ),
-                    SizedBox(width: 20, height: 20,),
+         children: [
+                Text('Ortalama cihaz kullanım süreniz, son 24 saatte 90 dakikanın altında ise puan kazanabilirsiniz, aksi takdirde puanlarınızın yarısını kaybedersiniz!'),
+           Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage("lib/assets/ads.png"),
+              fit: BoxFit.cover,
 
-               Padding(
-                 padding: const EdgeInsets.all(10.0),
-                 child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                   primary: Colors.green[800],
-                   fixedSize: const Size(240, 60),            
-           ),
-                    child: Text('Puanlarınızla Bağış Yapın!\n           (Çok Yakında)'),
-                   onPressed: null
-                         
+            ),
+              ),
+             child: Column(               
+               children:[
+                 SizedBox(width: 20, height: 15,),
+                   Padding(
+                     padding: const EdgeInsets.all(10.0),
+             child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                     primary: Colors.deepOrange[400],
+                     fixedSize: const Size(350, 70),           
+                 ),
+                       onPressed: () {
+                          Navigator.push(
+                             context,
+                              MaterialPageRoute(
+                                builder: (context) => Kamuspotu(),
+                              )
+                              );
+                            setState(() {
+                              var mypuan = context.read<PuanData>();
+                                 mypuan.kamuspotupuan(); 
+                              _interstitialAd.show();
+                            });
+             
+   
+                        }, 
+                       child: const Text('Kamu Spotu')),
+                   ),
+             SizedBox(width: 20, height: 15,),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                       primary: Colors.redAccent[500],
+                       fixedSize: const Size(350, 70),            
+                 ),
+                        onPressed:  () {
+                          Navigator.push(
+                             context,
+                              MaterialPageRoute(
+                                builder: (context) => odullu_reklam(),
+                              )
+                              );
+                            setState(() {
+                            
+                              _interstitialAd.show();
+                            });
+             
+   
+                        }, 
+                       child: const Text('Ödüllü Reklamlar')),
                     ),
-               ),
-                    SizedBox(width: 20, height: 20,),
-                  ElevatedButton(
-                    onPressed: null,
-                   
-                     child: Text('Puan:'+mypuan.puan.toString(),),
+                     
+                          SizedBox(width: 20, height: 15,),
+                     Padding(
+                       padding: const EdgeInsets.all(10.0),
+                       child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                         primary: Colors.red[400],
+                         fixedSize: const Size(350, 70),            
+                 ),
+                          child: Text('Cihaz Kullanım İstatistiği'),
+                         onPressed: () {
+                          Navigator.push(
+                             context,
+                              MaterialPageRoute(
+                                builder: (context) => Grafik(information: infos)
+                              )
+                              );
+                            setState(() {
+                              refresh();
+                              _interstitialAd.show();
+                            });
+                        },             
+                          ),
                      ),
-                    
+                          SizedBox(width: 20, height: 15,),
+
+                     Padding(
+                       padding: const EdgeInsets.all(10.0),
+                       child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                         primary: Colors.green[800],
+                         fixedSize: const Size(350, 60),            
+                 ),
+                          child: Text('Puanlarınızla Bağış Yapın!\n           (Çok Yakında)'),
+                         onPressed: (){},
+                               
+                          ),
+                     ),
+                          SizedBox(width: 20, height: 15,),
+                        ElevatedButton(
+                          onPressed: (){},
+                         
+                           child: Text('Puan:'+mypuan.puan.toString(),),
+                           ),
+                          
      Padding(
-       padding: const EdgeInsets.only(top: 70, right: 20, bottom: 10, left: 20),
-       child:
-        TextButton(
-             onPressed: () => logOut(context),
-             child:Text('Çıkış yap'),
-             style: TextButton.styleFrom(
-               primary: Colors.red,
-               onSurface: Colors.black,
-               side: const BorderSide(color: Colors.grey, width: 2),
-             ),),
+             padding: const EdgeInsets.only(top: 70, right: 20, bottom: 10, left: 20),
+             child:
+              TextButton(
+                   onPressed: () => logOut(context),
+                   child:Text('Çıkış yap'),
+                   style: TextButton.styleFrom(
+                     primary: Colors.red,
+                     onSurface: Colors.black,
+                     side: const BorderSide(color: Colors.grey, width: 2),
+                   ),),
      ),
    
-    const Spacer(),//banner reklam gösterme
-    isLoaded
-    ?  SizedBox(
-     height: 50,
+                 ],
+                ),
+           ),
+              const Spacer(),
+              isLoaded?
+              SizedBox(
+     height: 40,
      child:AdWidget(ad: bannerAd!,),
     ):const SizedBox(),
-           ],
-          ),
+         ],
+       ),
          ),
         ),
        );   

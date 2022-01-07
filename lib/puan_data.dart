@@ -1,9 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'app_usage/grafik.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:app_usage/app_usage.dart';
 //bu sınıfta kendını dinleyenlere haber verme ozellıgı kazandırıorz (ChangeNotifier)
 class PuanData with ChangeNotifier{
 GrafikState gr = GrafikState();
+late final List<AppUsageInfo> information;
+late List<AppUsageInfo> infoList;
+List<AppUsageInfo> infos = [];
+
 late SharedPreferences _sharedPrefObject;
 
 void deneme(){
@@ -19,23 +24,26 @@ void setvalue(double value){
   puan=value;
 
 }
-  void kamuspotupuan() {
-  
-     if(gr.largest[0]+gr.largest[1]+gr.largest[2]+gr.largest[3]+gr.largest[4]>60){//vakit harcanan 5 uyg. kullanım süresi 60dk dan büyükse
+  void kamuspotupuan() {//bildirim.toplamsure.toDouble())/(information.length.toDouble())>15000.toDouble()
+ // print(infoList.length.toDouble());
+  print(bildirim.toplamsure);    
+  double x=((bildirim.toplamsure)/10) ;
+  double y=90.0;
+     if(x>y){//vakit harcanan uygulamaların ortalama kullanım süresi 90dk dan büyükse
       puan=puan-(puan/2);
     } else {
-      puan=puan+0.001;
-    }
+      puan=puan+0.001;   
+}
     savePuanToSharedPref(puan);
 
     notifyListeners();
   }
 
    void odullureklampuan() {
-  //daha sonra bakılacak!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  double x=((bildirim.toplamsure)/10) ;
+  double y=90.0;
   //+gr.largest[1]+gr.largest[2]+gr.largest[3]+gr.largest[4]
-     if((gr.largest[0]+gr.largest[1]+gr.largest[2]+gr.largest[3]+gr.largest[4])>60){
-     //+gr.largest[1]+gr.largest[2]+gr.largest[3]+gr.largest[4]>60){//vakit harcanan 5 uyg. kullanım süresi 60dk dan büyükse
+     if(x>y){
       puan=puan-(puan/2);
     } else {
       puan=puan+0.002;

@@ -86,20 +86,18 @@ class _odullu_reklamState extends State<odullu_reklam> {
       backgroundColor: Colors.red[100]),
 ),
                 ),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   odulluReklam(context),
-                   
+                   odulluReklam(context, Colors.red, Text('1- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.blue, Text('2- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.green, Text('3- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.lime, Text('4- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.purple, Text('5- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.cyan, Text('6- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.indigo, Text('7- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.brown, Text('8- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.teal, Text('9- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.indigoAccent, Text('10- Ödüllü Reklam İzle')),
+                   odulluReklam(context, Colors.red, Text('11- Ödüllü Reklam İzle')),
+                                     
               ],
             ),
           ),
@@ -110,12 +108,12 @@ class _odullu_reklamState extends State<odullu_reklam> {
       }
     );
   }
-Padding odulluReklam(BuildContext context) {
+Padding odulluReklam(BuildContext context, Color color, Text text) {
   return Padding(
          padding: const EdgeInsets.only(left: 10, top: 15, right: 10, bottom: 25),
          child: ElevatedButton(
            style: ElevatedButton.styleFrom(
-             primary: Colors.deepOrange[600],
+             primary: color,
              fixedSize: const Size(240, 60),            
            ),
                 onPressed:  (){    
@@ -127,7 +125,7 @@ Padding odulluReklam(BuildContext context) {
             Provider.of<PuanData>(context, listen: false).setvalue(deger);
 
                 },
-               child: Text('Ödüllü Reklam İzle')),
+               child: text),
        );
 }
 }
