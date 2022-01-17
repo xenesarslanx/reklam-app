@@ -1,4 +1,4 @@
 # reklam
 
 
-![ödüllü reklam sayfası](/lib/assets/rewarded.jpg | width=100)
+![ödüllü reklam sayfası](/assets/rewarded.jpg)
