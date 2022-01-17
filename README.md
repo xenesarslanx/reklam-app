@@ -1,9 +1,7 @@
 # reklam
 
-<img src="lib/assets/rewarded.jpg" width="200">
+<img src="lib/assets/rewarded.jpg" width="230">
 
-![uygulama kullanım süreleri](lib/assets/4.jpg)
+<img src="lib/assets/4.jpg" width="230">
 
-![uygulama kullanım süreleri](lib/assets/puan.png)
-
-<img src="lib/assets/puan.png" width="48">
+<img src="lib/assets/puan.png" width="230">
