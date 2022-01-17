@@ -1,7 +1,6 @@
 # reklam
 
-
-![ödüllü reklam sayfası](lib/assets/rewarded.jpg)
+<img src="lib/assets/rewarded.jpg" width="200">
 
 ![uygulama kullanım süreleri](lib/assets/4.jpg)
 
