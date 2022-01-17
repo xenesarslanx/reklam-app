@@ -1,4 +1,4 @@
 # reklam
 
 
-![ödüllü reklam sayfası](https://github.com/xenesarslanx/reklam-app/blob/main/lib/assets/rewarded.jpg | width=100)
+![ödüllü reklam sayfası](/lib/assets/rewarded.jpg | width=100)
