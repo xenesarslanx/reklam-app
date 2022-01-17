@@ -7,3 +7,4 @@
 
 ![uygulama kullanım süreleri](lib/assets/puan.png)
 
+<img src="lib/assets/puan.png" width="48">
