@@ -1,16 +1,10 @@
 # reklam
 
-A new Flutter project.
+  Uygulama ile kullanıcıların son 24 saatteki cihaz ve uygulama kullanım sürelerine erisilmistir ve bunlar satır grafigiyle kisiye sunulmustur. Ayrıca kullanıcıya çesitli reklamlar izletilerek reklam gelirlerinin bir kısmı kisinin cihaz kullanım süresiyle ters orantılı olarak puan hanesine eklenmistir. Uygulama her android cihazda çalısabilecek düzeyde gelistirilmistir. Çogunlukla mobil cihazlarla fazla vakit geçiren kisilere hitap etmektedir.
+  https://play.google.com/store/apps/details?id=com.azbakkazan.reklam
 
-## Getting Started
+<img src="lib/assets/rewarded.jpg" width="230">
 
-This project is a starting point for a Flutter application.
+<img src="lib/assets/4.jpg" width="230">
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="lib/assets/puan.png" width="230">
