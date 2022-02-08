@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:native_admob_flutter/native_admob_flutter.dart';
+import 'package:reklam/admob_helper.dart';
  
 class NativeAds extends StatefulWidget {
   const NativeAds({Key? key}) : super(key: key);
@@ -32,11 +33,7 @@ class _NativeAdsState extends State<NativeAds>
     return controller.isLoaded
         ? NativeAd(
             height: 330,
-            unitId: MobileAds.nativeAdTestUnitId,
-            //real id:'ca-app-pub-5417429060364094/8778175622',
-            //test id:'ca-app-pub-3940256099942544/2247696110'
-            // unitId: MobileAds.nativeAdTestUnitId,
- 
+            unitId: AdHelper.nativeAdUnitId,
             loading: Text('loading'),
             error: Text('Ads failed to load'),
             icon: AdImageView(size: 80),

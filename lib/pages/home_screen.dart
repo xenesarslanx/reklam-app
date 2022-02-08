@@ -120,7 +120,7 @@ class HomeScreenState extends State<HomeScreen> {
    
        body: Column(
          children: [
-                Text('Ortalama cihaz kullanım süreniz, son 24 saatte 90 dakikanın altında ise puan kazanabilirsiniz, aksi takdirde puanlarınızın yarısını kaybedersiniz!'),
+                Text('  Ortalama cihaz kullanım süreniz, son 24 saatte 60 dakikanın altında ise puan kazanabilirsiniz, aksi takdirde puanlarınızın yarısını kaybedersiniz!'),
            Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
@@ -147,8 +147,8 @@ class HomeScreenState extends State<HomeScreen> {
                               )
                               );
                             setState(() {
-                              var mypuan = context.read<PuanData>();
-                                 mypuan.kamuspotupuan(); 
+                        //      var mypuan = context.read<PuanData>();
+                        //         mypuan.kamuspotupuan(); 
                               _interstitialAd.show();
                             });
              

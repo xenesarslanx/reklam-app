@@ -13,12 +13,12 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '2'//from 1
+    flutterVersionCode = '6'//from 5
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = '2.0'//from 1.0
+    flutterVersionName = '6.0'//from 5.0
 }
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.android.application'

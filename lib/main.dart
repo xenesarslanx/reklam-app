@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:native_admob_flutter/native_admob_flutter.dart';
+import 'package:reklam/admob_helper.dart';
 import 'package:reklam/pages/home_screen.dart';
 import 'package:reklam/puan_data.dart';
 import 'introduction/custom.dart';
@@ -12,11 +13,11 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MobileAds.initialize();
   await Firebase.initializeApp();
-  MobileAds.setTestDeviceIds(['9345804C1E5765DHG1DFE29CA0758842']);//
+ // MobileAds.setTestDeviceIds(['9345804C1E5765DHG1DFE29CA0758842']);//
   final AppOpenAd appOpenAd = AppOpenAd();
   if (!appOpenAd.isAvailable) {
-    await appOpenAd.load(unitId: MobileAds.appOpenAdTestUnitId);//'ca-app-pub-5417429060364094/5523569708'
-  }
+    await appOpenAd.load(unitId: AdHelper.appOpenAdUnitId);
+  }                                                                       
   if (appOpenAd.isAvailable) {
     await appOpenAd.show();
   }

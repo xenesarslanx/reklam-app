@@ -76,7 +76,7 @@ class _odullu_reklamState extends State<odullu_reklam> {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text('Diğer ödüllü reklamları izlemek için belli bir süre beklemeniz veya uygulamayı yeniden başlatmanız gerekebilir.',
+                  child: Text('Diğer ödüllü reklamları izlemek için belli bir süre beklemeniz veya uygulamayı yeniden başlatmanız gerekebilir.\n\nReklamlar gözükmüyor ise reklam havuzu dolmuştur, başka zaman tekrar deneyin',
                   style: TextStyle(
       color: Colors.grey[800],
       fontWeight: FontWeight.w900,

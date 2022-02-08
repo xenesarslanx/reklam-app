@@ -14,6 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool isLoading = false;
   String hata1='';
   String hata2='';
+  String hata3='';
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Text('$hata1'),
                   Text('$hata2'),
+                  Text('$hata3'),
 
                 ],
               ),
@@ -118,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
           logIn(_email.text, _password.text).then((user) {
             if (user != null) {
-              print("Login Sucessfull");
+              hata3="Giriş başarılı!";
               setState(() {
                 isLoading = false;
               });

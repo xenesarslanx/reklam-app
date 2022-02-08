@@ -27,12 +27,16 @@ void setvalue(double value){
   void kamuspotupuan() {//bildirim.toplamsure.toDouble())/(information.length.toDouble())>15000.toDouble()
  // print(infoList.length.toDouble());
   print(bildirim.toplamsure);    
+     print("kamuspotupuancalısıyor");
   double x=((bildirim.toplamsure)/10) ;
-  double y=90.0;
+  double y=60.0;
      if(x>y){//vakit harcanan uygulamaların ortalama kullanım süresi 90dk dan büyükse
       puan=puan-(puan/2);
-    } else {
-      puan=puan+0.001;   
+    } else if(x>10){
+      puan=puan+0.01;   
+}
+else {
+  puan=puan+0;
 }
     savePuanToSharedPref(puan);
 
@@ -40,14 +44,18 @@ void setvalue(double value){
   }
 
    void odullureklampuan() {
-  double x=((bildirim.toplamsure)/10) ;
-  double y=90.0;
+     print("odullureklamcalısıyor");
+  double x=((bildirim.toplamsure)/10);
+  double y=60.0;
   //+gr.largest[1]+gr.largest[2]+gr.largest[3]+gr.largest[4]
      if(x>y){
       puan=puan-(puan/2);
-    } else {
-      puan=puan+0.002;
+    } else if(x>10) {
+      puan=puan+0.02;
     }
+    else {
+  puan=puan+0;
+}
     savePuanToSharedPref(puan);
 
     notifyListeners();
